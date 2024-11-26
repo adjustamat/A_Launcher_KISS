@@ -1,13 +1,13 @@
 package fr.neamar.kiss.utils;
 
-import android.util.Pair;
-
 import java.util.ArrayList;
 import java.util.List;
+import android.util.Pair;
 
 /**
- * A Sublime Text inspired fuzzy match algorithm
- * https://github.com/forrestthewoods/lib_fts/blob/master/docs/fuzzy_match.md
+ * A Sublime Text inspired fuzzy match algorithm.
+ * <a href="https://github.com/forrestthewoods/lib_fts/blob/master/docs/fuzzy_match.md">
+ * github documentation</a>.
  * <p>
  * match("otw", "Power of the Wild", info) = true, info.score = 14
  * match("otw", "Druid of the Claw", info) = true, info.score = -3
@@ -114,7 +114,7 @@ public class FuzzyScore {
 
     /**
      * @param text string where to search
-     * @return true if each character in pattern is found sequentially within text
+     * @return match==true if each character in pattern is found sequentially within text
      */
     public MatchInfo match(CharSequence text) {
         int idx = 0;
@@ -132,7 +132,7 @@ public class FuzzyScore {
 
     /**
      * @param text string converted to codepoints
-     * @return true if each character in pattern is found sequentially within text
+     * @return match==true if each character in pattern is found sequentially within text
      */
     public MatchInfo match(int[] text) {
         // Loop variables
